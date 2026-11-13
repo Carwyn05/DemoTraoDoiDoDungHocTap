@@ -1,0 +1,18 @@
+# File cấu hình chứa thông tin riêng
+.env
+.env.*
+
+# Thư viện cài đặt
+/vendor/
+/node_modules/
+
+# File log và file tạm
+*.log
+*.tmp
+
+# File hệ thống
+.DS_Store
+Thumbs.db
+
+# File cấu hình cá nhân VS Code
+.vscode/
