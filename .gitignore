@@ -16,3 +16,4 @@ Thumbs.db
 
 # File cấu hình cá nhân VS Code
 .vscode/
+/config/database.php
