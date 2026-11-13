@@ -1,43 +1,29 @@
 # Website quản lý và trao đổi đồ dùng học tập cũ
 
-## Cài đặt (XAMPP)
+Cài đặt (XAMPP)
 
 1. Cài XAMPP, khởi động Apache và MySQL trong XAMPP Control Panel.
 2. Copy toàn bộ thư mục `trao-doi-do-dung` vào `C:\xampp\htdocs\`.
-3. Mở `http://localhost/phpmyadmin`, vào tab **Import**, chọn file `database.sql` trong thư mục này → bấm **Go**.
-   (Hoặc mở tab SQL và dán nội dung file `database.sql` vào rồi chạy.)
+3. Mở `http://localhost/phpmyadmin`, vào tab **Import**, chọn file `trao_doi_hoc_tap.sql` trong thư mục này → bấm **Go**.
+   (Hoặc mở tab SQL và dán nội dung file `trao_doi_hoc_tap.sql` vào rồi chạy.)
 4. Mở trình duyệt: `http://localhost/trao-doi-do-dung-v2/`
 
-## Tài khoản demo có sẵn
+Tài khoản demo có sẵn
 
 | Vai trò | Email | Mật khẩu |
 |---|---|---|
 | Admin | admin@example.com | admin123 |
 | Sinh viên | sinhvien@example.com | sv123456 |
 
-## Cấu trúc thư mục
 
-```
-trao-doi-do-dung/
-├── config/database.php       - kết nối CSDL
-├── includes/                 - header, footer, hàm dùng chung
-├── admin/                    - trang quản trị (chỉ admin truy cập được)
-├── database.sql              - script tạo CSDL + dữ liệu mẫu
-├── index.php                 - trang chủ, tìm kiếm/lọc
-├── dang-ky.php / dang-nhap.php / dang-xuat.php
-├── dang-tin.php / sua-tin.php / xoa-tin.php / tin-cua-toi.php
-├── tin-chi-tiet.php          - xem chi tiết + liên hệ
-├── xac-nhan-thanh-toan.php   - xác nhận thanh toán, sinh biên nhận
-```
-
-## Phân quyền
++ Phân quyền
 
 - Chưa đăng nhập: chỉ xem được trang chủ và chi tiết tin, không thấy thông tin liên hệ/thanh toán.
 - Sinh viên: đăng tin, sửa/xóa tin của mình, liên hệ và xác nhận thanh toán với tin người khác.
 - Admin: thêm menu "Quản trị" — duyệt/từ chối tin đăng, quản lý môn học, xem lịch sử giao dịch.
   Truy cập trực tiếp URL trong thư mục `admin/` khi chưa đăng nhập admin sẽ tự chuyển hướng về trang đăng nhập.
 
-## Chức năng thanh toán
++ Chức năng thanh toán
 
 Đây là **thanh toán giả lập** (không kết nối cổng thanh toán thật): người mua xác nhận số tiền và hình thức
 (tiền mặt/chuyển khoản) → hệ thống lưu vào bảng `GiaoDich` và sinh biên nhận điện tử. Giao dịch tiền thật
